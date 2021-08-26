@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form'
 
 import Form from '../Form/index'
 import Field from '../Field/index'
+import Button from '../Button'
 
 const FormNew = () => {
   const { register, handleSubmit } = useForm()
@@ -24,6 +25,8 @@ const FormNew = () => {
       <Field.Text label="Bairro" name="district" type="text" {...register} />
       <Field.Text label="Cidade" name="city" type="text" {...register} />
       <Field.Text label="CEP" name="cep" type="text" {...register} />
+
+      <Button>Enviar</Button>
     </Form>
   )
 }
