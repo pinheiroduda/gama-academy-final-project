@@ -1,6 +1,6 @@
 import React from 'react'
-import Main from './components/Main'
-import Form from './components/Form'
+import Main from './components/Main/index'
+import Form from './components/Form/index'
 import Field from './components/Field'
 
 function App() {
