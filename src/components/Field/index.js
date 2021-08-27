@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Label from './Label/index'
-import Content from '../Content'
+import Content from './Content'
 import Input from './/Input/index'
 
 const Text = ({ label, type, name, register }) => (
