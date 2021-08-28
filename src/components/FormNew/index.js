@@ -1,8 +1,8 @@
 import React from 'react'
-// import { useForm } from 'react-hook-form'
-// import { yupResolver } from '@hookform/resolvers'
+import { useForm } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup'
 
-// import schema from './validation'
+import schema from './validation'
 import Header from '../header'
 import img from '../../assets/img.jpg'
 import Home from '../Home'
@@ -12,19 +12,17 @@ import Button from '../Button'
 import Footer from '../Footer'
 
 const FormNew = () => {
-  // const { register, handleSubmit, errors } = useForm({
-  //   resolver: yupResolver(schema)
-  // })
+  const {
+    register,
+    handleSubmit,
+    formState: { errors }
+  } = useForm({
+    resolver: yupResolver(schema)
+  })
 
-  // const newUser = user => {}
-
-  // <Form onSubmit={handleSubmit(newUser)}>
-  //   <Field.Text label="Nome" name="name" type="text" {...register} />
-  //   {errors.name?.message}
-  //   <Field.Text label="Email" name="email" type="email" {...register} />
-  //   {errors.email?.message}
-  //   <Button>Enviar</Button>
-  // </Form>
+  const newUser = user => {
+    console.log(user)
+  }
 
   return (
     <>
@@ -50,10 +48,12 @@ const FormNew = () => {
           </p>
         </div>
       </Home>
-      <Form>
-        <Field.Text label="Nome" name="name" type="text" />
-        <Field.Text label="Email" name="email" type="email" />
-        <Button>Enviar</Button>
+      <Form onSubmit={handleSubmit(newUser)}>
+        <Field.Text label="Nome" type="text" {...register('name')} />
+        {errors?.name?.message}
+        <Field.Text label="Email" type="email" {...register('email')} />
+        {errors?.email?.message}
+        <input type="submit" value="Enviar" />
       </Form>
       <Footer>
         <div>
