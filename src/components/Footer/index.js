@@ -1,10 +1,14 @@
-import styled from 'styled-components'
+import React from 'react'
+import FooterStyle from './style'
 
-const Footer = styled.div`
-  display: flex
-  align-items: center;
-  justify content: space-between;
-  padding: 10px;
-`
+const Footer = () => {
+  return (
+    <FooterStyle>
+      <div>
+        <h1>Teste</h1>
+      </div>
+    </FooterStyle>
+  )
+}
 
 export default Footer

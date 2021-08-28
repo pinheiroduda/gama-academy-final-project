@@ -1,10 +1,26 @@
-import styled from 'styled-components'
+import React from 'react'
 
-const Header = styled.div`
-  display: flex
-  align-items: center;
-  justify content: space-between;
-  padding: 10px;
-`
+import img from '../../assets/img.jpg'
+import Home from '../Home'
+import FormNew from '../FormNew'
+import Footer from '../Footer'
+import HeaderStyle from './style'
+
+const Header = () => {
+  return (
+    <HeaderStyle>
+      <div>
+        <img src={img} alt="company logo" />
+      </div>
+      <div>
+        <nav>
+          <a href={Home}>Home</a>
+          <a href={FormNew}>Cadastro</a>
+          <a href={Footer}>Contatos</a>
+        </nav>
+      </div>
+    </HeaderStyle>
+  )
+}
 
 export default Header
