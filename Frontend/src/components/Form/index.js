@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 
 import axios from 'axios'
-import { Input, FormStyle, Title } from './style'
+import { Input, Title, FormWrapper, Button } from './style'
 
 const Form = () => {
   const fetchAddress = async () => {
@@ -50,7 +50,7 @@ const Form = () => {
   return (
     <>
       <Title> Formulário para cadastro </Title>
-      <FormStyle>
+      <FormWrapper>
         <label>Nome</label>
         <Input
           onChange={e => {
@@ -140,8 +140,8 @@ const Form = () => {
           }}
           value={form.cpf}
         ></Input>
-        <button onClick={() => createCandidate()}>Cadastrar</button>
-      </FormStyle>
+        <Button onClick={() => createCandidate()}>Cadastrar</Button>
+      </FormWrapper>
     </>
   )
 }
