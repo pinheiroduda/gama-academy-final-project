@@ -2,8 +2,8 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 
 import Field from '../Field/index'
-import { FormDocumentStyle, Input, FormStyle, Title } from '../Form/style'
-const FormNew = () => {
+import { FormDocumentStyle, Input, FormStyle, Title, Select } from './style'
+const Form = () => {
   const {
     register,
     handleSubmit,
@@ -24,16 +24,16 @@ const FormNew = () => {
           type="text"
           {...register('position')}
         />
-        <select {...register('gender')}>
+        <Select {...register('gender')}>
           <option value="female">Feminino</option>
           <option value="male">Masculino</option>
           <option value="other">Outro</option>
-        </select>
-        <select {...register('marital-status')}>
+        </Select>
+        <Select {...register('marital-status')}>
           <option value="married">Casado(a)</option>
           <option value="single">Solteiro(a)</option>
           <option value="other">Outro</option>
-        </select>
+        </Select>
         <Field.Text label="Email" type="email" {...register('email')} />
         <Field.Text label="Celular" type="tel" {...register('tel')} />
         <Field.Text
@@ -56,4 +56,4 @@ const FormNew = () => {
   )
 }
 
-export default FormNew
+export default Form

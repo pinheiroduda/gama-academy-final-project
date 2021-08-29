@@ -8,14 +8,12 @@ export const FormWrapper = styled.div`
 `
 
 export const FormStyle = styled.form`
-  max-width: 300px;
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(2, 1fr);
 `
 
 export const FormDocumentStyle = styled.form`
-  max-width: 300px;
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(2, 1fr);
@@ -26,11 +24,12 @@ export const FormDocumentStyle = styled.form`
 export const Input = styled.input`
   margin: 5px;
   margin-bottom: 30px;
-  border-radius: 5px;
+  border-radius: 10px;
   border: 1px solid #fff;
   max-width: 20%;
   width: 100%;
   cursor: pointer;
+  padding: 5px;
 `
 export const Title = styled.h1`
   font-size: 20px;
@@ -38,4 +37,10 @@ export const Title = styled.h1`
   color: #fff;
   padding-top: 25px;
   margin-bottom: 20px;
+`
+
+export const Select = styled.select`
+  border-radius: 10px;
+  border: 1px solid #fff;
+  padding: 5px;
 `

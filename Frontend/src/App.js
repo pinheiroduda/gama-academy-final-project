@@ -3,7 +3,7 @@ import React from 'react'
 import Header from './components/Header'
 import Home from './components/Home'
 import { FormWrapper } from './components/Form/style'
-import FormNew from './components/FormNew'
+import Form from './components/Form'
 import Footer from './components/Footer'
 import { Main } from './components/Main/style'
 
@@ -13,7 +13,7 @@ function App() {
       <Header />
       <Home />
       <FormWrapper>
-        <FormNew />
+        <Form />
       </FormWrapper>
       <Footer />
     </Main>
