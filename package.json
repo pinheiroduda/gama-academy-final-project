@@ -1,5 +1,5 @@
 {
-  "name": "backend",
+  "name": "back",
   "engines": {
     "node": "14.x",
     "npm": ">=6.0.0"
