@@ -38,3 +38,8 @@ export const Button = styled.button`
   cursor: pointer;
   padding: 5px;
 `
+
+export const ErrorSpan = styled.span`
+  color: red;
+  display: ${props => (props.isError ? 'block' : 'none')};
+`
