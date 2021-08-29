@@ -1,57 +1,96 @@
 import React from 'react'
-import { useForm } from 'react-hook-form'
+import { useState, useEffect } from 'react'
 
-import Field from '../Field/index'
-import { FormDocumentStyle, Input, FormStyle, Title, Select } from './style'
+import axios from 'axios'
+import { Input, FormStyle, Title, Select } from './style'
+
 const Form = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors }
-  } = useForm()
-
-  const newUser = user => {
-    console.log(user)
+  const fetchAddress = async () => {
+    const address = await axios.get(
+      `https://viacep.com.br/ws/${form.cep}/json/`
+    )
+    setForm({ ...form, logradouro: address.data.logradouro })
   }
+
+  const createCandidate = async candidate => {
+    const user = await axios.post('http://localhost:5000/register', form)
+    if (user.status === 200) {
+      alert('deu certo')
+    }
+    alert('deu errado')
+  }
+
+  const [form, setForm] = useState({
+    name: '',
+    cep: '',
+    email: '',
+    gender: '',
+    logradouro: ''
+  })
+
+  useEffect(() => {
+    console.log(form)
+  }, [form])
 
   return (
     <>
       <Title> Formulário para cadastro </Title>
-      <FormStyle onSubmit={handleSubmit(newUser)}>
-        <Field.Text label="Nome" type="text" {...register('name')} />
-        <Field.Text
-          label="Cargo pretendido"
-          type="text"
-          {...register('position')}
-        />
-        <Select {...register('gender')}>
-          <option value="female">Feminino</option>
-          <option value="male">Masculino</option>
-          <option value="other">Outro</option>
-        </Select>
-        <Select {...register('marital-status')}>
-          <option value="married">Casado(a)</option>
-          <option value="single">Solteiro(a)</option>
-          <option value="other">Outro</option>
-        </Select>
-        <Field.Text label="Email" type="email" {...register('email')} />
-        <Field.Text label="Celular" type="tel" {...register('tel')} />
-        <Field.Text
-          label="Data de nascimento"
-          type="date"
-          {...register('date')}
-        />
-        <Field.Text label="Endereço" type="text" {...register('address')} />
-        <Field.Text label="Bairro" type="text" {...register('district')} />
-        <Field.Text label="Cidade" type="text" {...register('city')} />
+      <FormStyle>
+        <label>Nome</label>
+        <Input
+          onChange={e => {
+            setForm({ ...form, name: e.target.value })
+          }}
+          value={form.name}
+        ></Input>
+        <label>Email</label>
+        <Input
+          onChange={e => {
+            setForm({ ...form, email: e.target.value })
+          }}
+          value={form.email}
+        ></Input>
+        <label>CEP</label>
+        <Input
+          onBlur={() => {
+            fetchAddress()
+          }}
+          onChange={e => {
+            setForm({ ...form, cep: e.target.value })
+          }}
+          value={form.cep}
+        ></Input>
+        <label>endereço</label>
+        <Input
+          onChange={e => {
+            setForm({ ...form, logradouro: e.target.value })
+          }}
+          value={form.logradouro}
+        ></Input>
+        <label>Gênero</label>
+        <Input
+          onChange={e => {
+            setForm({ ...form, gender: e.target.value })
+          }}
+          value={form.gender}
+        ></Input>
+        {/* <Title>Documentos</Title>
+        <label>Identidade</label>
+        <Input
+          onChange={e => {
+            setForm({ ...form, id: e.target.value })
+          }}
+          value={form.id}
+        ></Input>
+        <label>CPF</label>
+        <Input
+          onChange={e => {
+            setForm({ ...form, cpf: e.target.value })
+          }}
+          value={form.cpf}
+        ></Input> */}
+        <button onClick={() => createCandidate()}>Cadastrar</button>
       </FormStyle>
-      <FormDocumentStyle>
-        <Title> Documentos </Title>
-        <br></br>
-        <Field.Text label="Identidade" type="text" {...register('email')} />
-        <Field.Text label="CPF" type="text" {...register('tel')} />
-      </FormDocumentStyle>
-      <Input type="submit" value="Enviar" />
     </>
   )
 }
