@@ -28,13 +28,37 @@
                   "name": {
                     "type": "string"
                   },
+                  "position": {
+                    "type": "string"
+                  },
+                  "date": {
+                    "type": "date"
+                  },
                   "gender": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "phone": {
                     "type": "string"
                   },
                   "cep": {
                     "type": "string"
                   },
-                  "email": {
+                  "logradouro": {
+                    "type": "string"
+                  },
+                  "district": {
+                    "type": "string"
+                  },
+                  "city": {
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "cpf": {
                     "type": "string"
                   }
                 }
@@ -43,9 +67,18 @@
                 "teste": {
                   "value": {
                     "name": "Eduarda",
+                    "postion": "Software developer",
+                    "date": "1999-02-13",
                     "gender": "Femino Cis",
+                    "email": "duda@gmail.com",
+                    "phone": "999887744",
                     "cep": "00000-000",
-                    "email": "duda@gmail.com"
+                    "logradouro": "Rua numero um",
+                    "district": "algum",
+                    "city": "alguma",
+                    "id": "507528311",
+                    "cpf": "78124157081"
+                    
                   }
                 }
               }
