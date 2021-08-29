@@ -1,0 +1,58 @@
+{
+  "openapi": "3.0.0",
+
+  "info": {
+    "title": "Final challenge API",
+    "description": "API of Gama Academy final challenge",
+    "version": "0.0.1"
+  },
+
+  "servers": [
+    {
+      "url": "http://localhost:5000",
+      "description": "development environment"
+    }
+  ],
+
+  "paths": {
+    "/register": {
+      "post": {
+        "summary": "candidate registration",
+        "description": "User registration route, receives: nome, genêro, email e cep",
+        "tags": ["candidate"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "gender": {
+                    "type": "string"
+                  },
+                  "cep": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  }
+                }
+              },
+              "examples": {
+                "teste": {
+                  "value": {
+                    "name": "Eduarda",
+                    "gender": "Femino Cis",
+                    "cep": "00000-000",
+                    "email": "duda@gmail.com"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
