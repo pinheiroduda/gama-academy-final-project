@@ -37,7 +37,10 @@ const Form = () => {
 
   const createCandidate = async candidate => {
     try {
-      const user = await axios.post('http://localhost:5000/register', form)
+      const user = await axios.post(
+        'https://gama-final-backend.herokuapp.com/register',
+        form
+      )
       if (user.status === 200) {
         alert('casdastro concluído')
       }
