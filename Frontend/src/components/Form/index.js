@@ -2,14 +2,17 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 
 import axios from 'axios'
-import { Input, FormStyle, Title, Select } from './style'
+import { Input, FormStyle, Title } from './style'
 
 const Form = () => {
   const fetchAddress = async () => {
-    const address = await axios.get(
+    const { data: address } = await axios.get(
       `https://viacep.com.br/ws/${form.cep}/json/`
     )
-    setForm({ ...form, logradouro: address.data.logradouro })
+
+    const { logradouro, bairro, localidade } = address
+
+    setForm({ ...form, logradouro, district: bairro, city: localidade })
   }
 
   const createCandidate = async candidate => {
@@ -19,6 +22,18 @@ const Form = () => {
     }
     alert('deu errado')
   }
+
+  // const createCandidate = async (candidate) => {
+  //   try {
+  //     const user = await axios.post('http://localhost:5000/register', form);
+  //     if (user.status === 200) {
+  //       alert('iti malia deu certo');
+  //     }
+
+  //   } catch (error) {
+  //     setCpfError(true);
+  //   }
+  // }; // ver esssa parte
 
   const [form, setForm] = useState({
     name: '',
@@ -43,12 +58,41 @@ const Form = () => {
           }}
           value={form.name}
         ></Input>
+        <label>Cargo Pretendido</label>
+        <Input
+          onChange={e => {
+            setForm({ ...form, position: e.target.value })
+          }}
+          value={form.position}
+        ></Input>
+        <label>Data de nascimento</label>
+        <Input
+          type="date"
+          onChange={e => {
+            setForm({ ...form, date: e.target.value })
+          }}
+          value={form.date}
+        ></Input>
+        <label>Gênero</label>
+        <Input
+          onChange={e => {
+            setForm({ ...form, gender: e.target.value })
+          }}
+          value={form.gender}
+        ></Input>
         <label>Email</label>
         <Input
           onChange={e => {
             setForm({ ...form, email: e.target.value })
           }}
           value={form.email}
+        ></Input>
+        <label>Celular</label>
+        <Input
+          onChange={e => {
+            setForm({ ...form, contact: e.target.value })
+          }}
+          value={form.contact}
         ></Input>
         <label>CEP</label>
         <Input
@@ -60,21 +104,28 @@ const Form = () => {
           }}
           value={form.cep}
         ></Input>
-        <label>endereço</label>
+        <label>Endereço</label>
         <Input
           onChange={e => {
             setForm({ ...form, logradouro: e.target.value })
           }}
           value={form.logradouro}
         ></Input>
-        <label>Gênero</label>
+        <label>Bairro</label>
         <Input
           onChange={e => {
-            setForm({ ...form, gender: e.target.value })
+            setForm({ ...form, district: e.target.value })
           }}
-          value={form.gender}
+          value={form.district}
         ></Input>
-        {/* <Title>Documentos</Title>
+        <label>Cidade</label>
+        <Input
+          onChange={e => {
+            setForm({ ...form, city: e.target.value })
+          }}
+          value={form.city}
+        ></Input>
+        <Title>Documentos</Title>
         <label>Identidade</label>
         <Input
           onChange={e => {
@@ -88,7 +139,7 @@ const Form = () => {
             setForm({ ...form, cpf: e.target.value })
           }}
           value={form.cpf}
-        ></Input> */}
+        ></Input>
         <button onClick={() => createCandidate()}>Cadastrar</button>
       </FormStyle>
     </>

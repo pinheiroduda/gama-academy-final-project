@@ -29,9 +29,3 @@ export const Title = styled.h1`
   padding-top: 25px;
   margin-bottom: 20px;
 `
-
-export const Select = styled.select`
-  border-radius: 10px;
-  border: 1px solid #fff;
-  padding: 5px;
-`
