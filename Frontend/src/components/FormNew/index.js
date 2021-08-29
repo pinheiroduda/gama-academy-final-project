@@ -4,7 +4,7 @@ import { yupResolver } from '@hookform/resolvers/yup'
 
 import schema from './validation'
 import Field from '../Field/index'
-import FormStyle, { FormDocumentStyle, Input } from '../Form/style'
+import { FormDocumentStyle, Input, FormStyle, Title } from '../Form/style'
 const FormNew = () => {
   const {
     register,
@@ -21,6 +21,8 @@ const FormNew = () => {
   return (
     <>
       <FormStyle onSubmit={handleSubmit(newUser)}>
+        <Title> Formulário para cadastro </Title>
+        <br></br>
         <Field.Text label="Nome" type="text" {...register('name')} />
         {errors?.name?.message}
         <Field.Text
@@ -57,7 +59,7 @@ const FormNew = () => {
         {errors?.city?.message}
       </FormStyle>
       <FormDocumentStyle>
-        <h1> Documentos </h1>
+        <Title> Documentos </Title>
         <br></br>
         <Field.Text label="Identidade" type="text" {...register('email')} />
         {errors?.email?.message}

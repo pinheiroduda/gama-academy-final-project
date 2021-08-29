@@ -1,9 +1,8 @@
 import styled from 'styled-components'
 
 const HomeStyle = styled.div`
-  background: linear-gradient(#237a57, #093028);
-  width: 100%
-  padding: 10px;
+  max-width: 100%;
+  width: 100%;
 `
 
 export default HomeStyle
@@ -11,17 +10,22 @@ export default HomeStyle
 export const HomeContainer = styled.div`
   margin-left: auto;
   margin-right: auto;
-  padding: 30px;
-  width: 991px;
+  max-width: 80%;
+  width: 100%;
+  padding: 20px;
 `
 
 export const Title = styled.h1`
   font-size: 50px;
+  font-weight: bold;
   color: #fff;
   text-align: center;
+  padding-top: 20px;
 `
 
-export const Text = styled.span`
-  font-size: 30px:
-  color:#fff
+export const Text = styled.p`
+  font-size: 20px;
+  color: #fff;
+  text-align: justify;
+  padding-top: 20px;
 `

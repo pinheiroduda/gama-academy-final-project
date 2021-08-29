@@ -1,22 +1,24 @@
 import styled from 'styled-components'
 
 const FooterStyle = styled.div`
-  background: linear-gradient(#237a57, #093028);
+  background: #fff;
+  max-width: 100%;
   width: 100%;
   display: flex;
-  padding: 30px;
+  align-items: center;
+  justify-content: space-evenly;
 `
 
 export default FooterStyle
 
 export const Img = styled.img`
   width: 80px;
-  margin-left: 230px;
 `
 
 export const P = styled.p`
-  margin-left: 200px;
   font-size: 10px;
+  font-weight: bold;
+  color: #000;
 `
 
 export const Nav = styled.nav`
@@ -24,8 +26,9 @@ export const Nav = styled.nav`
 `
 
 export const A = styled.a`
-  margin-left: 180px;
+  margin-left: 40px;
   cursor: pointer;
-  color: #fff;
+  color: #000;
   text-decoration: none;
+  font-weight: bold;
 `

@@ -14,9 +14,10 @@ const Home = () => {
           armazenadas em nosso banco de dados que fica à disposição das
           empresas. Assim que alguma delas se interessar por você, entrará em
           contato.
-          <br></br>
-          Veja alguns depoimentos de quem já conseguiu o emprego dos sonhos
-          através da JobsNET.
+        </Text>
+        <Text>
+          E aí, está esperando o que? Se inscreva agora mesmo pelo formulário
+          abaixo!
         </Text>
       </HomeContainer>
     </HomeStyle>
