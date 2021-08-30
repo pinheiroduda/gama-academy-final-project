@@ -7,19 +7,14 @@ export const FormWrapper = styled.div`
   flex-direction: column;
 `
 
-export const FormStyle = styled.form`
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(2, 1fr);
-`
-
 export const Input = styled.input`
   margin: 5px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   border-radius: 10px;
   border: 1px solid #fff;
   cursor: pointer;
   padding: 5px;
+  width: 20%;
 `
 
 export const Title = styled.h1`
@@ -37,10 +32,5 @@ export const Button = styled.button`
   border: 1px solid #fff;
   cursor: pointer;
   padding: 5px;
-  width: 25%;
-`
-
-export const ErrorSpan = styled.span`
-  color: red;
-  display: ${props => (props.isError ? 'block' : 'none')};
+  width: 20%;
 `

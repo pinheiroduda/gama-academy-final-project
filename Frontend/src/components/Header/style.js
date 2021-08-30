@@ -18,7 +18,7 @@ export const Img = styled.img`
 export const Title = styled.h1`
   font-size: 40px;
   font-weight: bold;
-  color: #000;
+  color: #16222a;
   text-align: center;
   margin-left: 15px;
 `

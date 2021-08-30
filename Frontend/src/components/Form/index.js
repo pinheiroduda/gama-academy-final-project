@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 
 import axios from 'axios'
-import { Input, Title, FormWrapper, Button, FormStyle } from './style'
+import { Input, Title, FormWrapper, Button } from './style'
 
 const Form = () => {
   const fetchAddress = async () => {
@@ -19,14 +19,6 @@ const Form = () => {
       city: localidade
     })
   }
-
-  // const createCandidate = async candidate => {
-  //   const user = await axios.post('http://localhost:5000/register', form)
-  //   if (user.status === 200) {
-  //     alert('deu certo')
-  //   }
-  //   alert('deu errado')
-  // }
 
   const createCandidate = async candidate => {
     try {
@@ -61,130 +53,107 @@ const Form = () => {
     <>
       <Title> Formulário para cadastro </Title>
       <FormWrapper>
-        <FormStyle>
-          <label>Nome</label>
-          <Input
-            onChange={e => {
-              setForm({ ...form, name: e.target.value })
-            }}
-            value={form.name}
-          ></Input>
-        </FormStyle>
+        <label>Nome</label>
+        <Input
+          onChange={e => {
+            setForm({ ...form, name: e.target.value })
+          }}
+          value={form.name}
+        ></Input>
 
-        <FormStyle>
-          <label>Cargo Pretendido</label>
-          <Input
-            onChange={e => {
-              setForm({ ...form, position: e.target.value })
-            }}
-            value={form.position}
-          ></Input>
-        </FormStyle>
+        <label>Cargo Pretendido</label>
+        <Input
+          onChange={e => {
+            setForm({ ...form, position: e.target.value })
+          }}
+          value={form.position}
+        ></Input>
 
-        <FormStyle>
-          <label>Data de nascimento</label>
-          <Input
-            type="date"
-            onChange={e => {
-              setForm({ ...form, date: e.target.value })
-            }}
-            value={form.date}
-          ></Input>
-        </FormStyle>
+        <label>Data de nascimento</label>
+        <Input
+          type="date"
+          onChange={e => {
+            setForm({ ...form, date: e.target.value })
+          }}
+          value={form.date}
+        ></Input>
 
-        <FormStyle>
-          <label>Gênero</label>
-          <Input
-            onChange={e => {
-              setForm({ ...form, gender: e.target.value })
-            }}
-            value={form.gender}
-          ></Input>
-        </FormStyle>
+        <label>Gênero</label>
+        <Input
+          onChange={e => {
+            setForm({ ...form, gender: e.target.value })
+          }}
+          value={form.gender}
+        ></Input>
 
-        <FormStyle>
-          <label>Email</label>
-          <Input
-            onChange={e => {
-              setForm({ ...form, email: e.target.value })
-            }}
-            value={form.email}
-          ></Input>
-        </FormStyle>
+        <label>Email</label>
+        <Input
+          onChange={e => {
+            setForm({ ...form, email: e.target.value })
+          }}
+          value={form.email}
+        ></Input>
 
-        <FormStyle>
-          <label>Celular</label>
-          <Input
-            onChange={e => {
-              setForm({ ...form, phone: e.target.value })
-            }}
-            value={form.phone}
-          ></Input>
-        </FormStyle>
+        <label>Celular</label>
+        <Input
+          onChange={e => {
+            setForm({ ...form, phone: e.target.value })
+          }}
+          value={form.phone}
+        ></Input>
 
-        <FormStyle>
-          <label>CEP</label>
-          <Input
-            onBlur={() => {
-              fetchAddress()
-            }}
-            onChange={e => {
-              setForm({ ...form, cep: e.target.value })
-            }}
-            value={form.cep}
-          ></Input>
-        </FormStyle>
+        <label>CEP</label>
+        <Input
+          onBlur={() => {
+            fetchAddress()
+          }}
+          onChange={e => {
+            setForm({ ...form, cep: e.target.value })
+          }}
+          value={form.cep}
+        ></Input>
 
-        <FormStyle>
-          <label>Endereço</label>
-          <Input
-            onChange={e => {
-              setForm({ ...form, logradouro: e.target.value })
-            }}
-            value={form.logradouro}
-          ></Input>
-        </FormStyle>
+        <label>Endereço</label>
+        <Input
+          onChange={e => {
+            setForm({ ...form, logradouro: e.target.value })
+          }}
+          value={form.logradouro}
+        ></Input>
 
-        <FormStyle>
-          <label>Bairro</label>
-          <Input
-            onChange={e => {
-              setForm({ ...form, district: e.target.value })
-            }}
-            value={form.district}
-          ></Input>
-        </FormStyle>
+        <label>Bairro</label>
+        <Input
+          onChange={e => {
+            setForm({ ...form, district: e.target.value })
+          }}
+          value={form.district}
+        ></Input>
 
-        <FormStyle>
-          <label>Cidade</label>
-          <Input
-            onChange={e => {
-              setForm({ ...form, city: e.target.value })
-            }}
-            value={form.city}
-          ></Input>
-        </FormStyle>
+        <label>Cidade</label>
+        <Input
+          onChange={e => {
+            setForm({ ...form, city: e.target.value })
+          }}
+          value={form.city}
+        ></Input>
 
         <Title>Documentos</Title>
-        <FormStyle>
-          <label>Identidade</label>
-          <Input
-            onChange={e => {
-              setForm({ ...form, id: e.target.value })
-            }}
-            value={form.id}
-          ></Input>
-        </FormStyle>
 
-        <FormStyle>
-          <label>CPF</label>
-          <Input
-            onChange={e => {
-              setForm({ ...form, cpf: e.target.value })
-            }}
-            value={form.cpf}
-          ></Input>
-        </FormStyle>
+        <label>Identidade</label>
+        <Input
+          onChange={e => {
+            setForm({ ...form, id: e.target.value })
+          }}
+          value={form.id}
+        ></Input>
+
+        <label>CPF</label>
+        <Input
+          onChange={e => {
+            setForm({ ...form, cpf: e.target.value })
+          }}
+          value={form.cpf}
+        ></Input>
 
         <Button onClick={() => createCandidate()}>Cadastrar</Button>
       </FormWrapper>
