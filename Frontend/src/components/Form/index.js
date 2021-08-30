@@ -2,14 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 
 import axios from 'axios'
-import {
-  Input,
-  Title,
-  FormWrapper,
-  Button,
-  FormStyle,
-  ErrorSpan
-} from './style'
+import { Input, Title, FormWrapper, Button, FormStyle } from './style'
 
 const Form = () => {
   const fetchAddress = async () => {
