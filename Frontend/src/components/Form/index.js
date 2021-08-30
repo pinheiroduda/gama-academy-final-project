@@ -165,8 +165,8 @@ const Form = () => {
           ></Input>
         </FormStyle>
 
+        <Title>Documentos</Title>
         <FormStyle>
-          <Title>Documentos</Title>
           <label>Identidade</label>
           <Input
             onChange={e => {

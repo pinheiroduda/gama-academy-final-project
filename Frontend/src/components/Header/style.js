@@ -6,17 +6,21 @@ const HeaderStyle = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
 `
 
 export default HeaderStyle
 
 export const Img = styled.img`
-  width: 80px;
+  width: 100px;
 `
 
-export const Nav = styled.nav`
-  padding: 30px;
+export const Title = styled.h1`
+  font-size: 40px;
+  font-weight: bold;
+  color: #000;
+  text-align: center;
+  margin-left: 15px;
 `
 
 export const A = styled.a`

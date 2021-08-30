@@ -15,14 +15,6 @@ export const HomeContainer = styled.div`
   padding: 20px;
 `
 
-export const Title = styled.h1`
-  font-size: 50px;
-  font-weight: bold;
-  color: #fff;
-  text-align: center;
-  padding-top: 20px;
-`
-
 export const Text = styled.p`
   font-size: 20px;
   color: #fff;

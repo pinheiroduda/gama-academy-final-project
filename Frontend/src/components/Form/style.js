@@ -37,6 +37,7 @@ export const Button = styled.button`
   border: 1px solid #fff;
   cursor: pointer;
   padding: 5px;
+  width: 25%;
 `
 
 export const ErrorSpan = styled.span`

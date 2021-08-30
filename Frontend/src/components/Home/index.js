@@ -1,13 +1,12 @@
 import React from 'react'
-import HomeStyle, { HomeContainer, Title, Text } from './style'
+import HomeStyle, { HomeContainer, Text } from './style'
 
 const Home = () => {
   return (
     <HomeStyle>
       <HomeContainer>
-        <Title>Seja bem vindo à JobsNet!</Title>
         <Text>
-          Sabe aquela vaga na empresa dos sonhos que você tanto deseja? Então,
+          Sabe aquela vaga na empresa dos sonhos? Então,
           na nossa página você pode ficar 1 passo mais próximo de realizar esse
           desejo. Para concorrer as oportunidades que você sonha, basta
           preencher o formulário abaixo que todas suas informações estarão
